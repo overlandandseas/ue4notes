@@ -1,0 +1,39 @@
+//{NAME}ProjectGameMode.h and .cpp get generated automatically in c++ project.
+
+//Game mode has a start play function;
+
+//In GameMode.h
+virtual void StartPlay() override;
+
+//in GameMode.cpp
+void AFPSGameMode::StartPlay()
+{
+      Super::StartPlay();
+
+      StartMatch();
+
+      if (GEngine)
+      {
+            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("HELLO WORLD"));
+            // this is debug text
+      }
+}
+
+//This function declaration will allow you to override the StartPlay() function inherited from the `AActor` class, so that you can print a message to the screen when gameplay begins.
+
+//Also we need to defiine a constructor;
+
+// in GameMode.h
+AFPSGameMode(const FObjectInitializer& ObjectInitializer);
+
+//in GameMode.cpp
+AFPSGameMode::AFPSGameMode(const FObjectInitializer& ObjectInitializer)
+    : Super(ObjectInitializer)
+{
+
+} //this is a fun was of spacing, not.
+
+
+//BE SURE TO CHANGE THE GAME MODE TO THE ONE YOU WANT IN YOUR PROJECT SETTINGS
+
+//The Generated .h file should always be last in the declairation
