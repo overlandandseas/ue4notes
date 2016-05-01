@@ -199,6 +199,7 @@ AFPSCharacter::AFPSCharacter(const FObjectInitializer& ObjectInitializer)
     FirstPersonCameraComponent->AttachParent = CapsuleComponent;
     //3. Add this to the constructor, after the component is created. You can tweak the camera's position in the BP_FPSCharacter Blueprint later as well, but this gives a good starting location for the CameraComponent. Also, you will only set the CameraComponent's location, not its rotation, because our earlier Turn and LookUp functions will control the camera's orientation.
     // Position the camera a bit above the eyes
+    //I don't think this is making a different at all.
     FirstPersonCameraComponent->RelativeLocation = FVector(0, 0, 50.0f + BaseEyeHeight);
     // Allow the pawn to control rotation.
     FirstPersonCameraComponent->bUsePawnControlRotation = true;
